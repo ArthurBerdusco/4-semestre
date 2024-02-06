@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    gap: 50px;
+}
+
+aside {
+    width: 40%;
+}
+
+section {
+    display: grid;
+    width: 60%;
+    text-align: center;
+    align-items: center;
+}
+
+article {
+    height: 250px;
+
+    border: 2px solid black;
+    margin-bottom: 20px;
+}
+
+img {
+    text-align: center;
+    width: 50%;
+}
+
+p {
+    color: red;
+}
+
