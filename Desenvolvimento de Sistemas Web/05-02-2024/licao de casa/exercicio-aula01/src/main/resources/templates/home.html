@@ -11,23 +11,84 @@
 <body>
 
     <header></header>
+    <h1 th:text="${dados.nome}"></h1>
     <main>
         <aside>
-            <img src="https://thumbs.dreamstime.com/b/um-le%C3%A3o-pr%C3%B3ximo-com-fundo-emba%C3%A7ado-276984391.jpg" alt="">
-            <p>ola mundo</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, quasi pariatur et deleniti ullam
-                repellat consequuntur incidunt, unde alias provident voluptas minus quibusdam praesentium sit facilis
-                suscipit, voluptate officiis fugiat?
-            </p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta in repudiandae culpa. Non maiores
-                incidunt labore magnam sunt doloremque temporibus dicta earum, in eius quaerat nulla a blanditiis
-                perferendis. Eaque.</p>
+            <div class="profile">
+
+                <img src="img/hello.jpeg"
+                    alt="">
+
+
+                <ul class="list-group">
+                    <li class="list-group-item" th:text="${dados.email}">Email: </li>
+                    <li class="list-group-item" th:text="${dados.telefone}">Telefone: </li>
+                    <li class="list-group-item" th:text="${dados.dataNascimento}">Data de nascimento: </li>
+                    <li class="list-group-item"><a th:href="${dados.linkedin}" target="_blank">Linkedin</a></li>
+                    <li class="list-group-item"><a th:href="${dados.github}" target="_blank">Github</a></li>
+                </ul>
+
+            </div>
         </aside>
-        <section>
-            <article><p>1</p></article>
-            <article><p>2</p></article>
-            <article><p>3</p></article>
-        </section>
+        <article>
+            <section>
+                <h2>Experiências profissionais</h2>
+                <div class="experiencia" th:each="experiencia: ${dados.experienciasProfissionais}">
+                    <p>
+                        <strong th:text="${experiencia.nomeEmpresa}"></strong>
+                        <span th:text="${experiencia.cargo}"></span>
+                    </p>
+
+                    <p th:text="${experiencia.inicio}"></p>
+                    <p th:text="${experiencia.fim}"></p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Formação acadêmica</h2>
+                <div class="formacoes" th:each="formacao: ${dados.formacoes}">
+                    <p>
+                        <strong th:text="${formacao.nomeInstituto}"></strong>
+                        <span th:text="${formacao.curso}"></span>
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Conhecimentos</h2>
+                <span class="conhecimentos" th:each="conhecimento: ${dados.conhecimentos}"
+                    th:text="${conhecimento.nome}"></span>
+
+
+            </section>
+
+            <section>
+                <h2>Idiomas</h2>
+                <div class="table-container">
+                    <table id="idiomas">
+                       
+                            <tr>
+                                <th></th>
+                                <th>Leitura</th>
+                                <th>Escrita</th>
+                                <th>Conversação</th>
+                            </tr>
+                       
+                     
+                            <tr th:each="idioma: ${dados.idiomas}">
+                                <td th:text="${idioma.lingua}"></td>
+                                <td th:text="${idioma.leitura}"></td>
+                                <td th:text="${idioma.escrita}"></td>
+                                <td th:text="${idioma.conversacao}"></td>
+                            </tr>
+                       
+                    </table>
+
+                </div>
+
+            </section>
+
+        </article>
     </main>
     <footer></footer>
 
