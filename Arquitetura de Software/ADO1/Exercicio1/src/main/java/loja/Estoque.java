@@ -1,13 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package loja;
 
-/**
- *
- * @author arthur.sbsouza
- */
+import java.util.List;
+
 public interface Estoque {
+    
+    public void carregarProdutos();
+    public boolean remover(int id, int quantidade);
+    public List verEstoque();
+    
     
 }
