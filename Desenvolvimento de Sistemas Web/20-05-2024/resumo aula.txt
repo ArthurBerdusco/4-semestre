@@ -1,0 +1,6 @@
+Aplicação java com spring security e JWT
+
+JWT é Token de segurança composto por 3 partes principais:
+Header
+Payload = DADOS
+Assinatura = Segurança ou Criptografia do Token 
